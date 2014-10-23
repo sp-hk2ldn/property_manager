@@ -5,5 +5,30 @@
   <%= @property.address %>
 </p>
 
+<p>
+  <strong>Work outstanding:</strong>
+  <%= @property.work_outstanding %>
+</p>
+
+<p>
+  <strong>Landlord:</strong>
+  <%= @property.landlord %>
+</p>
+
+<p>
+  <strong>Tenant:</strong>
+  <%= @property.tenant %>
+</p>
+
+<p>
+  <strong>Map coords:</strong>
+  <%= @property.map_coords %>
+</p>
+
+<p>
+  <strong>Work outstanding type:</strong>
+  <%= @property.work_outstanding_type %>
+</p>
+
 <%= link_to 'Edit', edit_property_path(@property) %> |
 <%= link_to 'Back', properties_path %>

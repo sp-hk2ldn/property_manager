@@ -1,9 +1,14 @@
-<h1>List of Properties</h1>
+<h1>Listing properties</h1>
 
 <table>
   <thead>
     <tr>
       <th>Address</th>
+      <th>Work outstanding</th>
+      <th>Landlord</th>
+      <th>Tenant</th>
+      <th>Map coords</th>
+      <th>Work outstanding type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +17,11 @@
     <% @properties.each do |property| %>
       <tr>
         <td><%= property.address %></td>
+        <td><%= property.work_outstanding %></td>
+        <td><%= property.landlord %></td>
+        <td><%= property.tenant %></td>
+        <td><%= property.map_coords %></td>
+        <td><%= property.work_outstanding_type %></td>
         <td><%= link_to 'Show', property %></td>
         <td><%= link_to 'Edit', edit_property_path(property) %></td>
         <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>

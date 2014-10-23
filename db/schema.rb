@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022111839) do
+ActiveRecord::Schema.define(version: 20141023045925) do
 
   create_table "properties", force: true do |t|
     t.string   "address"
+    t.boolean  "work_outstanding"
+    t.string   "landlord"
+    t.string   "tenant"
+    t.string   "map_coords"
+    t.string   "work_outstanding_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
