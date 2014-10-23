@@ -15,8 +15,14 @@
  */
 .navbar {
 	background-color:#95A5A6;
+	border-bottom:3px double gray;
 }
 
 body > div.navbar.navbar-custom.navbar-fixed-top > div.navbar-collapse.collapse > form {
 	float:right;
+}
+
+body > div.navbar.navbar-custom.navbar-fixed-top > div.navbar-header > a:nth-child(1) > img {
+	max-height:50%;
+	max-width:50%;
 }
