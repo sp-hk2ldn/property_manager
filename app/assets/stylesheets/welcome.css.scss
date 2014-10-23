@@ -1,3 +1,22 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	font-family:Yanone Kaffeesatz;
+	background-color:#6C7A89
+}
+
+.col-xs-4 {
+	
+}
+
+.row {
+	margin-right:0px;
+}
+.panel-heading {
+	padding-left:0px;
+}
+
+#dashboardmain {
+	height:85%;
+}

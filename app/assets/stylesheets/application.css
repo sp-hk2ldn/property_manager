@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+.navbar {
+	background-color:#95A5A6;
+}
+
+body > div.navbar.navbar-custom.navbar-fixed-top > div.navbar-collapse.collapse > form {
+	float:right;
+}
