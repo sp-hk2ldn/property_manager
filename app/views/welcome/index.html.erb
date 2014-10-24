@@ -16,7 +16,7 @@
           </div>
             <p>
             <% @properties_with_outstanding_work.each do |prop| %>
-            <%= prop.address %> <br>
+            <%= link_to prop.address, property_path(prop) %> <br>
             <% end %> </p>
         
       </div>
@@ -27,7 +27,7 @@
           </div>
             <p>
             <% @properties_with_outstanding_work.each do |prop| %>
-            <%= prop.work_outstanding_type %> <br>
+            <%= link_to prop.work_outstanding_type, property_path(prop)%> <br>
             <% end %> </p>
        
       </div>
