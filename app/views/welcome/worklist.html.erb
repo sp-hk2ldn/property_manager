@@ -1,2 +1,7 @@
 <h1>Properties with <%= @type %> work orders</h1>
-<h1><%= @list.pop %></h1>
+<p>
+	
+	<% @list.each do |p| %>
+	 <%=link_to p, {:controller => "welcome", :property => @property_id} %></br>
+	<% end %>
+	

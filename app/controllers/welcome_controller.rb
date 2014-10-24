@@ -5,6 +5,6 @@ class WelcomeController < ApplicationController
   end
   def worklist
   	@type = Property.where(work_outstanding: true).pluck(:work_outstanding_type).pop
-  	@list = Property.where(work_outstanding_type: "Inventory").pluck(:address)
+  	@list = Property.where(work_outstanding_type: @type).pluck(:address)
   end
 end
