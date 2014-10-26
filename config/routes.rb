@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
 
-  get 'welcome/:worklist' => 'welcome#worklist'
-  get 'welcome/:worklist/:id' => 'properties#show'
+  get 'welcome/worklist' => 'welcome#worklist'
+  get 'welcome/worklist/:id' => 'properties#show'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

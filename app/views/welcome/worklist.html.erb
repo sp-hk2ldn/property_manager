@@ -2,6 +2,6 @@
 <p>
 	
 	<% @list.each do |p| %>
-	 <%=link_to p, {:controller => "welcome", :property => @property_id} %></br>
+	 <%=link_to p.address, 'worklist/' + p.id.to_s %></br>
 	<% end %>
 	
