@@ -1,4 +1,6 @@
 <%stylesheet_link_tag 'styles.css.scss'%>
+<%= stylesheet_link_tag '//cdn.datatables.net/1.10.3/css/jquery.dataTables.css' %>
+<%= javascript_include_tag '//cdn.datatables.net/1.10.3/js/jquery.dataTables.min.js' %>
 <div id="map-canvas"></div>
 <div class="container-fluid" id="main">
   <div class="row">
@@ -9,55 +11,52 @@
       
       
       <hr>
-    <div class="panel panel-default" id="dashboardmain">
-      <div class="col-md-4">
-        
-          <div class="panel-heading"><h3>Address</h3>
-          </div>
-            <p>
-            <% @properties_with_outstanding_work.each do |prop| %>
-            <%= link_to prop.address, property_path(prop) %> <br>
-            <% end %> </p>
-        
-      </div>
-      
-      <div class="col-md-4">
-        
-          <div class="panel-heading"><h3>Work Type</h3>
-          </div>
-            <p>
-            <% @properties_with_outstanding_work.each do |prop| %>
-            <%= link_to prop.work_outstanding_type, property_path(prop)%> <br>
-            <% end %> </p>
+    <table id="property_list" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Address</th>
+                <th>Work Outstanding</th>
+                <th>Work Outstanding Type</th>
+                <th>Landlord Name</th>
+                <th>Tenant Name</th>
+                <th>Tenant Telephone</th>
+                <th>Google Map Link</th>
+            </tr>
+        </thead>
+ 
+        <tfoot>
+            <tr>
+                <th>ID</th>
+                <th>Address</th>
+                <th>Work Outstanding</th>
+                <th>Work Outstanding Type</th>
+                <th>Landlord Name</th>
+                <th>Tenant Name</th>
+                <th>Tenant Telephone</th>
+                <th>Google Map Link</th>
+            </tr>
+        </tfoot>
+        <tbody>
+        <% @properties.each do |prop| %>
        
-      </div>
-    
-      <div class="col-md-4">
-        
-          <div class="panel-heading"><h3>Raised On</h3>
-          </div>
-        
-            <p>
-            <% @properties_with_outstanding_work.each do |prop| %>
-            <%= prop.updated_at.to_formatted_s(:long) %> <br>
-            <% end %> </p>
-        
-      </div>
-      
-      <hr>
-      
-      
-      <hr>
-    
-      
-      <hr>
-   
-      
+            <tr>
+                <td><%= prop.id %></td>
+                <td><%= prop.address %></td>
+                <td><%= prop.work_outstanding %>
+                <td><%= prop.work_outstanding_type %></td>
+                <td><%= prop.landlord %></td>
+                <td><%= prop.tenant %></td>
+                <td><%= prop.tenant_number %></td>
+                <td>Insert Google Map link here</td>
+            </tr>
+        <% end %>
 
-        
-      <hr>      
-
-    </div>
+        </tbody>
+    </table>
+      <hr>
+      
+  </div>
   </div>
     <div class="col-xs-4"><!--map-canvas will be postioned here--></div>
     
@@ -67,3 +66,5 @@
 
 	<!-- script references -->
 		<script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
+    <%javascript_include_tag 'scripts.js' %>
+    <%javascript_include_tag 'datatables.js' %>
