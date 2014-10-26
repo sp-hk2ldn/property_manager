@@ -2,8 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-	font-family:Yanone Kaffeesatz;
-	background-color:#6C7A89;
+	font-family:'Open Sans', sans-serif;
+	background-color:#1f1f1f;
+	color:#cc7b19;
 }
 
 .col-xs-4 {
@@ -28,6 +29,5 @@ body {
 
 #dashboardmain > div > p
 {
-	font-family:Yanone Kaffeesatz;
 	font-size:1.5em;
 }

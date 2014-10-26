@@ -1,16 +1,16 @@
 <%stylesheet_link_tag 'styles.css.scss'%>
-<%= stylesheet_link_tag '//cdn.datatables.net/1.10.3/css/jquery.dataTables.css' %>
-<%= javascript_include_tag '//cdn.datatables.net/1.10.3/js/jquery.dataTables.min.js' %>
+
 <div id="map-canvas"></div>
 <div class="container-fluid" id="main">
   <div class="row">
   	<div class="col-xs-8" id="left">
-    <h2>Property Management System</h2>
+    <h2>Property Pilot</h2>
       
       <!-- item list -->
       
       
       <hr>
+      <!-- DataTable Rows -->
     <table id="property_list" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
@@ -38,12 +38,17 @@
             </tr>
         </tfoot>
         <tbody>
+        <!-- Populate DataTable -->
         <% @properties.each do |prop| %>
        
             <tr>
                 <td><%= prop.id %></td>
-                <td><%= prop.address %></td>
-                <td><%= prop.work_outstanding %>
+                <td><%=link_to prop.address, property_path(prop) %></td>
+                <% if prop.work_outstanding == true %>
+                <td><%="Yes" %></td>
+                <% else %>
+                <td><%="No" %></td>
+                <% end %>
                 <td><%= prop.work_outstanding_type %></td>
                 <td><%= prop.landlord %></td>
                 <td><%= prop.tenant %></td>
@@ -68,3 +73,6 @@
 		<script src="http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"></script>
     <%javascript_include_tag 'scripts.js' %>
     <%javascript_include_tag 'datatables.js' %>
+<%= stylesheet_link_tag '//cdn.datatables.net/1.10.3/css/jquery.dataTables.css' %>
+
+<%= javascript_include_tag '//cdn.datatables.net/1.10.3/js/jquery.dataTables.min.js' %>

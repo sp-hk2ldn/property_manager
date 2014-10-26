@@ -54,11 +54,24 @@ body{
 }
 
 #map-canvas {
-	width:33.3333%;
-    height:calc(100% - 0);
+	width:30%;
+    height:60%;
     position:absolute;
-    right:16px;
-    top:50px;
+    right:40px;
+    top:20%;
     bottom:0;
     overflow:hidden;
+    border:3px double gray;
+}
+
+h2 {
+    color:#fff;
+}
+
+.display {
+    background-image:-webkit-linear-gradient(left,rgba(23, 23, 23, 0.4),rgba(19,19,19,.4) 50%,rgba(0,0,0,.4));
+}
+
+.even {
+    background-color:red;
 }

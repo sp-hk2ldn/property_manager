@@ -14,8 +14,12 @@
  *= require_self
  */
 .navbar {
-	background-color:#95A5A6;
+	background-color:#000;
 	border-bottom:3px double gray;
+}
+body {
+	background-image:-webkit-linear-gradient(left,rgba(23, 23, 23, 0.4),rgba(19,19,19,.4) 50%,rgba(0,0,0,.4));
+	overflow:hidden;
 }
 
 body > div.navbar.navbar-custom.navbar-fixed-top > div.navbar-collapse.collapse > form {
@@ -26,3 +30,11 @@ body > div.navbar.navbar-custom.navbar-fixed-top > div.navbar-header > a:nth-chi
 	max-height:50%;
 	max-width:50%;
 }
+.glyphicon {
+	font-size:3em;
+	padding-left:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	color:rgb(155, 157, 158);
+}
+
