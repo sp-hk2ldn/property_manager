@@ -7,8 +7,9 @@ RSpec.describe "properties/new", :type => :view do
       :work_outstanding => false,
       :landlord => "MyString",
       :tenant => "MyString",
-      :map_coords => "MyString",
-      :work_outstanding_type => "MyString"
+      :work_outstanding_type => "MyString",
+      :latitude => 1.5,
+      :longitude => 1.5
     ))
   end
 
@@ -25,9 +26,11 @@ RSpec.describe "properties/new", :type => :view do
 
       assert_select "input#property_tenant[name=?]", "property[tenant]"
 
-      assert_select "input#property_map_coords[name=?]", "property[map_coords]"
-
       assert_select "input#property_work_outstanding_type[name=?]", "property[work_outstanding_type]"
+
+      assert_select "input#property_latitude[name=?]", "property[latitude]"
+
+      assert_select "input#property_longitude[name=?]", "property[longitude]"
     end
   end
 end

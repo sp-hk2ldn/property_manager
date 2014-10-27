@@ -7,8 +7,9 @@ RSpec.describe "properties/show", :type => :view do
       :work_outstanding => false,
       :landlord => "Landlord",
       :tenant => "Tenant",
-      :map_coords => "Map Coords",
-      :work_outstanding_type => "Work Outstanding Type"
+      :work_outstanding_type => "Work Outstanding Type",
+      :latitude => 1.5,
+      :longitude => 1.5
     ))
   end
 
@@ -18,7 +19,8 @@ RSpec.describe "properties/show", :type => :view do
     expect(rendered).to match(/false/)
     expect(rendered).to match(/Landlord/)
     expect(rendered).to match(/Tenant/)
-    expect(rendered).to match(/Map Coords/)
     expect(rendered).to match(/Work Outstanding Type/)
+    expect(rendered).to match(/1.5/)
+    expect(rendered).to match(/1.5/)
   end
 end

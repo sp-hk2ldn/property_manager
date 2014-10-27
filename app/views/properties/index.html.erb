@@ -7,8 +7,9 @@
       <th>Work outstanding</th>
       <th>Landlord</th>
       <th>Tenant</th>
-      <th>Map coords</th>
       <th>Work outstanding type</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,8 +21,9 @@
         <td><%= property.work_outstanding %></td>
         <td><%= property.landlord %></td>
         <td><%= property.tenant %></td>
-        <td><%= property.map_coords %></td>
         <td><%= property.work_outstanding_type %></td>
+        <td><%= property.latitude %></td>
+        <td><%= property.longitude %></td>
         <td><%= link_to 'Show', property %></td>
         <td><%= link_to 'Edit', edit_property_path(property) %></td>
         <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>

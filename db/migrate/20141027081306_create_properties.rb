@@ -5,8 +5,9 @@ class CreateProperties < ActiveRecord::Migration
       t.boolean :work_outstanding
       t.string :landlord
       t.string :tenant
-      t.string :map_coords
       t.string :work_outstanding_type
+      t.float :latitude
+      t.float :longitude
 
       t.timestamps
     end

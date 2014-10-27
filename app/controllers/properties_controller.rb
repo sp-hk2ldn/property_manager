@@ -5,11 +5,22 @@ class PropertiesController < ApplicationController
   # GET /properties.json
   def index
     @properties = Property.all
+    @hash = Gmaps4rails.build_markers(@properties) do |property, marker|
+      marker.lat property.latitude
+      marker.lng property.longitude
+      marker.infowindow property.landlord
+    end
   end
 
   # GET /properties/1
   # GET /properties/1.json
   def show
+    @property_id = Property.find(params[:id])
+    @hash = Gmaps4rails.build_markers(@property_id) do |property, marker|
+      marker.lat property.latitude
+      marker.lng property.longitude
+      marker.infowindow property.landlord
+    end
   end
 
   # GET /properties/new
@@ -69,6 +80,6 @@ class PropertiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
-      params.require(:property).permit(:address, :work_outstanding, :landlord, :tenant, :map_coords, :work_outstanding_type)
+      params.require(:property).permit(:address, :work_outstanding, :landlord, :tenant, :work_outstanding_type, :latitude, :longitude)
     end
 end
