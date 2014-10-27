@@ -5,21 +5,16 @@ class PropertiesController < ApplicationController
   # GET /properties.json
   def index
     @properties = Property.all
-    @hash = Gmaps4rails.build_markers(@properties) do |property, marker|
-      marker.lat property.latitude
-      marker.lng property.longitude
-      marker.infowindow property.landlord
-    end
   end
 
   # GET /properties/1
   # GET /properties/1.json
   def show
-    @property_id = Property.find(params[:id])
-    @hash = Gmaps4rails.build_markers(@property_id) do |property, marker|
-      marker.lat property.latitude
-      marker.lng property.longitude
-      marker.infowindow property.landlord
+    @property = Property.find(params[:id])
+    @property_marker = Gmaps4rails.build_markers(@property) do |prop, marker|
+      marker.lat prop.latitude
+      marker.lng prop.longitude
+      marker.infowindow prop.address
     end
   end
 
