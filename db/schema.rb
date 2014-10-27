@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023091035) do
+ActiveRecord::Schema.define(version: 20141027075232) do
 
   create_table "properties", force: true do |t|
     t.string   "address"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20141023091035) do
     t.string   "work_outstanding_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
 end
