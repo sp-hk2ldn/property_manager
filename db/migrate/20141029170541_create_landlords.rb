@@ -7,8 +7,6 @@ class CreateLandlords < ActiveRecord::Migration
       t.string :email_address
       t.string :mailing_address
       t.date :date_registered_with_us
-
-      t.timestamps
     end
   end
 end
