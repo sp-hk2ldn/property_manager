@@ -1,4 +1,8 @@
 class Property < ActiveRecord::Base
 	geocoded_by :address
-	after_validation :geocode, :if => :address_changed?
+	before_validation :geocode, :if => :address_changed?
+	belongs_to :landlord
+	has_one :tenant
+	validates :latitude, :longitude, presence: true
+	accepts_nested_attributes_for :landlord, :tenant
 end
