@@ -12,13 +12,18 @@
         <div class="well" id="landlord"> 
                 <ul class="nav nav-stacked" id="sidebar"><h3>Landlord Information</h3>
                 </ul>
-                <p>
-                  <strong>Landlord:</strong><%= @property.landlord_id %>
-                </p>
+                
           </div>
         <div class="well" id="tenant"> 
                 <ul class="nav nav-stacked" id="middle-sidebar">
                 </ul>
+                <p>
+                  <strong>Name:</strong><%= @property.landlord.first_name + ' ' + @property.landlord.last_name %></br>
+                  <strong>Email:</strong><%= mail_to @property.landlord.email_address, @property.landlord.email_address %></br>
+                  <strong>Tel:</strong><%= @property.landlord.telephone_number %></br>
+                  <strong>Mailing Address:</strong><%=@property.landlord.mailing_address%></br>
+                  <strong>Client Since:</strong><%=@property.landlord.date_registered_with_us %></br>
+                </p>
           </div>
 
         <div class="well" id="tenant"> 
@@ -147,7 +152,7 @@
 
 <p>
   <strong>Tenant:</strong>
-  <%= @property.tenant %>
+  <%= @property.tenant_id %>
 </p>
 
 <p>

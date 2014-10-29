@@ -5,6 +5,10 @@ class PropertiesController < ApplicationController
   # GET /properties.json
   def index
     @properties = Property.all
+    
+    # @properties.each do
+    #   property.landlord
+    # end  
   end
 
   # GET /properties/1
@@ -20,7 +24,7 @@ class PropertiesController < ApplicationController
 
   # GET /properties/new
   def new
-    @property = Property.new, Landlord.new
+    @property = Property.new
   end
 
   # GET /properties/1/edit
@@ -31,7 +35,7 @@ class PropertiesController < ApplicationController
   # POST /properties.json
   def create
     @property = Property.new(property_params)
-
+    puts property_params
     respond_to do |format|
       if @property.save
         format.html { redirect_to @property, notice: 'Property was successfully created.' }
@@ -75,6 +79,6 @@ class PropertiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
-      params.require(:property).permit(:address, :work_outstanding, :work_outstanding_type, :latitude, :longitude)
+      params.require(:property).permit(:address, :work_outstanding, :work_outstanding_type, :latitude, :longitude, :landlord_id)
     end
 end

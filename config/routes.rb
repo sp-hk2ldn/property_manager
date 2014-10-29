@@ -1,19 +1,18 @@
 Rails.application.routes.draw do
-  resources :tenants
-
-  resources :landlords
-
-  resources :properties
-
+  resources :properties do
+  end
+  resources :landlords, shallow: true
+  resources :tenants, shallow: true
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+  get 'tenants' => 'tenants#show'
 
 
-  get 'welcome/worklist' => 'welcome#worklist'
-  get 'welcome/worklist/:id' => 'properties#show'
+  # get 'welcome/worklist' => 'welcome#worklist'
+  # get 'welcome/worklist/:id' => 'properties#show'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
