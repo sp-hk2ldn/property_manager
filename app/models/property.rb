@@ -5,6 +5,6 @@ class Property < ActiveRecord::Base
 	belongs_to :landlord
 	has_one :tenant
 	
-	validates :latitude, :longitude, presence: true
+	validates :latitude, :longitude, :landlord, presence: true
 	accepts_nested_attributes_for :landlord, :tenant
 end

@@ -16,7 +16,7 @@ body > div.container > div > div.col-md-9 > div:nth-child(5) > div > div > div.p
 	margin-top:200px;
 }
 
-#landlord, #tenant, .panel-body, .panel-heading {
+#landlord, #tenant, #blank, .panel-body, .panel-heading {
 	background-color:#1f1f1f;
 	background-image:none;
 	border:none;
@@ -54,4 +54,20 @@ h3 {
 
 hr {
 	padding-bottom:50px;
+}
+
+#blank {
+	padding-bottom:80%;
+}
+
+#headerhr {
+	padding-bottom:0px;
+}
+
+body > div.container > div > div.col-md-9 > div:nth-child(6) > div:nth-child(1) > div > div.panel-heading {
+	padding-bottom:0px;
+}
+
+body > div.container > div > div.col-md-9 > div:nth-child(6) > div:nth-child(1) > div > h4 {
+	padding-bottom:30px;
 }

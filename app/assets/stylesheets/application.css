@@ -38,3 +38,6 @@ body > div.navbar.navbar-custom.navbar-fixed-top > div.navbar-header > a:nth-chi
 	color:rgb(155, 157, 158);
 }
 
+.col-lg-8 {
+	width:66.666666667%;
+}

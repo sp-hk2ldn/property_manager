@@ -1,8 +1,14 @@
-<h1>Tenants Admin Panel</h1>
+<h1>Listing tenants</h1>
 
 <table>
   <thead>
     <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Telephone number</th>
+      <th>Email address</th>
+      <th>Date of commencement</th>
+      <th>Date of termination</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -10,6 +16,12 @@
   <tbody>
     <% @tenants.each do |tenant| %>
       <tr>
+        <td><%= tenant.first_name %></td>
+        <td><%= tenant.last_name %></td>
+        <td><%= tenant.telephone_number %></td>
+        <td><%= tenant.email_address %></td>
+        <td><%= tenant.date_of_commencement %></td>
+        <td><%= tenant.date_of_termination %></td>
         <td><%= link_to 'Show', tenant %></td>
         <td><%= link_to 'Edit', edit_tenant_path(tenant) %></td>
         <td><%= link_to 'Destroy', tenant, method: :delete, data: { confirm: 'Are you sure?' } %></td>

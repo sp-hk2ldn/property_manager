@@ -1,11 +1,11 @@
+ <%= javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js' %>
+ <%= javascript_include_tag  '//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js' %>
 <title>Dashboard</title>
-<%= stylesheet_link_tag 'admin.css.scss' %>
-<%= stylesheet_link_tag 'morris.css.scss' %>
 <%= stylesheet_link_tag "//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css" %>
 
 <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Property Pilot Dashboard</h1>
+                    <h2 class="page-header">Property Pilot Dashboard</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -35,10 +35,10 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-share-square fa-5x"></i>
+                                    <i class="fa fa-smile-o fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Add Property</div>
+                                    <div class="huge">Add Landlord</div>
                                 </div>
                             </div>
                         </div>
@@ -56,10 +56,10 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-share-square fa-5x"></i>
+                                    <i class="fa fa-users fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Add Property</div>
+                                    <div class="huge">Add Tenant</div>
                                 </div>
                             </div>
                         </div>
@@ -77,10 +77,10 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-share-square fa-5x"></i>
+                                    <i class="fa fa-wrench fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Add Property</div>
+                                    <div class="huge">Add Job</div>
                                 </div>
                             </div>
                         </div>
@@ -94,6 +94,42 @@
                     </div>
                 </div>
 
+<div class="col-md-3">
+</div>
+<div class="col-lg-6">
+    <div class="panel panel-default">
+        <div class class="panel-heading" id="chart-header">
+            <p id="chart-title"><i class="fa fa-bar-chart-o fa-fw"></i>Branch Performance</p>
+            <div id="performance-chart"></div>
+        </div>
+    </div>
+</div>
+<div class="col-md-3">
+</div>
+
+<script type="text/javascript">
+        new Morris.Line({
+          // ID of the element in which to draw the chart.
+          element: 'performance-chart',
+          // Chart data records -- each entry in this array corresponds to a point on
+          // the chart.
+          data: [
+            { month: '2014-02', value: <%= @property_count %> },
+            { month: '2014-04', value: 37 },
+            { month: '2014-06', value: 39 },
+            { month: '2014-08', value: 36 },
+            { month: '2014-10', value: 34 }
+          ],
+          // The name of the data record attribute that contains x-values.
+          xkey: 'month',
+          // A list of names of data record attributes that contain y-values.
+          ykeys: ['value'],
+          // Labels for the ykeys -- will be displayed when you hover over the
+          // chart.
+          labels: ['Properties Managed']
+        });
+</script>
+
  <%= javascript_include_tag '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js' %>
- <%= javascript_include_tag  '//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js' %>
  <%= javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js' %>
+ <%= javascript_include_tag  '//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js' %>

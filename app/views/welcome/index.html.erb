@@ -24,7 +24,7 @@
                 <th>Work Outstanding</th>
                 <th>Work Outstanding Type</th>
                 <th>Landlord Name</th>
-                <th>Tenant Name</th>
+
             </tr>
         </thead>
  
@@ -35,7 +35,6 @@
                 <th>Work Outstanding</th>
                 <th>Work Outstanding Type</th>
                 <th>Landlord Name</th>
-                <th>Tenant Name</th>
             </tr>
         </tfoot>
         <tbody>
@@ -51,8 +50,7 @@
                 <td><%="No" %></td>
                 <% end %>
                 <td><%= prop.work_outstanding_type %></td>
-                <td><%= prop.landlord_id %></td>
-                <td><%= prop.tenant_id %></td>
+                <td><%= prop.landlord.first_name + ' ' + prop.landlord.last_name %></td>
             </tr>
         <% end %>
 
