@@ -5,11 +5,11 @@
 
 <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="page-header">Property Pilot Dashboard</h1>
+                    <h2 class="page-header">Property Pilot Dashboard</h2>
                 </div>
                 <!-- /.col-lg-12 -->
-            </div>
-<div class="col-lg-3 col-md-6">
+            
+                <div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="row">
@@ -17,20 +17,20 @@
                                     <i class="fa fa-share-square fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Add Property</div>
+                                    <div class="huge"><%= link_to 'Add property', form_path, {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window1'} %></div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
+                        
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
-                        </a>
+                        
                     </div>
                 </div>
-<div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="row">
@@ -38,20 +38,18 @@
                                     <i class="fa fa-smile-o fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Add Landlord</div>
+                                    <div class="huge"><%= link_to 'Add Landlord', form_path, {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window2'} %></div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
-                        </a>
                     </div>
                 </div>
-<div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="row">
@@ -59,20 +57,18 @@
                                     <i class="fa fa-users fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">Add Tenant</div>
+                                    <div class="huge"><%= link_to 'Add Tenant', form_path, {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window1'} %></div>
                                 </div>
                             </div>
                         </div>
-                        <a href="#">
                             <div class="panel-footer">
                                 <span class="pull-left">View Details</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
-                        </a>
                     </div>
                 </div>
-<div class="col-lg-3 col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
                             <div class="row">
@@ -93,6 +89,7 @@
                         </a>
                     </div>
                 </div>
+</div>
 
 <div class="col-md-3">
 </div>
@@ -105,6 +102,18 @@
     </div>
 </div>
 <div class="col-md-3">
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+        <div id="modal-window1" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+  </div>
+  <div class="col-md-4">
+        <div id="modal-window2" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+  </div>
+    <div class="col-md-4">
+        <div id="modal-window3" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+  </div>
 </div>
 
 <script type="text/javascript">
