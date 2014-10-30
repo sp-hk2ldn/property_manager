@@ -18,12 +18,16 @@
                 <ul class="nav nav-stacked" id="middle-sidebar">
                 </ul>
                 <p>
+                  <% if @property.landlord == nil %>
+                    <strong>Property does not have registered Landlord yet!</strong>
+                    <% else %>
                   <strong>Name:</strong><%= @property.landlord.first_name + ' ' + @property.landlord.last_name %></br>
                   <strong>Email:</strong><%= mail_to @property.landlord.email_address, @property.landlord.email_address %></br>
                   <strong>Tel:</strong><%= @property.landlord.telephone_number %></br>
                   <strong>Mailing Address:</strong><%=@property.landlord.mailing_address%></br>
                   <strong>Client Since:</strong><%=@property.landlord.date_registered_with_us %></br>
                 </p>
+                <% end %>
           </div>
 
         <div class="well" id="tenant"> 
@@ -62,12 +66,12 @@
                       <% end %>
                       </div>
                       <div class="panel-body">
-                      <% if @property.work_outstanding == true %>
+                      </div>
+                          <% if @property.work_outstanding == true %>
                       <h4><%= "A work order was raised for this property on: " + @property.updated_at.to_formatted_s(:long_ordinal) %></h4>
                       <% else %>
                       <p><%= "Looks like there's nothing for you to organise on this property. Perhaps it's time for a cup of tea." %>
                       <% end %>
-                      </div>
                     </div>
                   </div>
                   <div class="col-md-6">
