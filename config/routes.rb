@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   get 'tenants' => 'tenants#show'
+  get 'dashboard' => 'admin#dashboard'
 
 
   # get 'welcome/worklist' => 'welcome#worklist'
