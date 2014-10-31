@@ -10,7 +10,7 @@
         <div class="col-md-3" id="leftCol">
                 
         <div class="well" id="landlord"> 
-                <ul class="nav nav-stacked" id="sidebar"><h3>Landlord Information</h3>
+                <ul class="nav nav-stacked" id="landlord-sidebar"><h3>Landlord Information</h3>
                 </ul>
                 <p>
                   <% if @property.landlord == nil %>
@@ -33,7 +33,7 @@
           </div>
 
         <div class="well" id="tenant"> 
-                <ul class="nav nav-stacked" id="sidebar"><h3>Tenant Information</h3>
+                <ul class="nav nav-stacked" id="tenant-sidebar"><h3>Tenant Information</h3>
                 </ul>
                 <p>
                   <% if @property.tenant == nil %>
@@ -69,126 +69,53 @@
                     <div class="panel panel-default">
                       <div class="panel-heading">
 
-                      <% if @property.work_outstanding == true %>
-                      <h3><%= "Yes!" %></h3>
-                      <% else %>
-                      <h3><%= "No" %></h3>
-                      <% end %>
+                        <% if @property.work_outstanding == true %>
+                        <h3><%= "Yes!" %></h3>
+                        <% else %>
+                        <h3 id="noworkheader"><%= "No" %></h3>
+                        <% end %>
                       </div>
                       <div class="panel-body">
-                      </div>
                           <% if @property.work_outstanding == true %>
                       <h4><%= "A work order was raised for this property on: " + @property.updated_at.to_formatted_s(:long_ordinal) %></h4>
+                      <p id="worktype"><%= @property.work_outstanding_type %></p>
                       <% else %>
                       <p><%= "Looks like there's nothing for you to organise on this property. Perhaps it's time for a cup of tea." %>
                       <% end %>
+                      <%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', "/" %>
+                      </div>
                     </div>
                   </div>
                   <div class="col-md-6">
-                      <div class="panel panel-default">
-                        <div class="panel-heading"><h3>Raise new work order</h3></div>
-                        <div class="btn-group">
-                          <button type="button" class="btn btn-warning">Raise Order</button>
-                          <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
-                            <span class="caret"></span>
-                            <span class="sr-only"></span>
-                          </button>
-                          <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Inventory</a></li>
-                            <li><a href="#">Checkout</a></li>
-                            <li><a href="#">Professional Clean</a></li>
-                            <li><a href="#">Electrical</a></li>
-                            <li><a href="#">Gas/Plumbing</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">Other</a></li>
-                          </ul>
-                        </div>
-                        <div class="panel-body">
-                        </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+
+                      
+                        <h3>Closest Nearby Properties</h3>
+                      
+                      </div>
+                      <div class="panel-body">
+                        <ul>
+                        <% for property in @property.nearbys(10) %>
+                        <li><%= link_to property.address, property %> (<%= property.distance.round(2) %> miles) </li>
+                        <%end%>
+                        </ul>
+                      </div>
                     </div>
+                  </div>
                   </div>  
                 </div>
+                      
               
                 <hr>
-              
-                <h2 id="sec2">Previous Work Orders</h2>
-                
-                <div class="row">
-                  <div class="col-md-4"><img src="//placehold.it/300x300" class="img-responsive"></div>
-                    <div class="col-md-4"><img src="//placehold.it/300x300" class="img-responsive"></div>
-                    <div class="col-md-4"><img src="//placehold.it/300x300" class="img-responsive"></div>
-                </div>         
+                       
           </div> 
     </div>
 </div>
 
 
 
-<p id="notice"><%= notice %></p>
-
-
-
-<p>
-  <strong>Work outstanding:</strong>
-  
-</p>
-
-
-
-
-
-
-
-<p>
-  <strong>Work outstanding type:</strong>
-  <%= @property.work_outstanding_type %>
-</p>
-
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @property.address %>
-</p>
-
-<p>
-  <strong>Work outstanding:</strong>
-  <%= @property.work_outstanding %>
-</p>
-
-<p>
-  <strong>Landlord:</strong>
-  <%= @property.landlord %>
-</p>
-
-
-
-<p>
-  <strong>Work outstanding type:</strong>
-  <%= @property.work_outstanding_type %>
-</p>
-
-<p>
-  <strong>Latitude:</strong>
-  <%= @property.latitude %>
-</p>
-
-<p>
-  <strong>Longitude:</strong>
-  <%= @property.longitude %>
-</p>
-
-<h3>Closest nearby properties</h3>
-<ul>
-<% for property in @property.nearbys(10) %>
-  <li><%= link_to property.address, property %> (<%= property.distance.round(2) %> miles) </li>
-<%end%>
-</ul>
-<%= link_to 'Edit', edit_property_path(@property) %> |
-<%= link_to 'Back', properties_path %>
 
 
 <script type="text/javascript">

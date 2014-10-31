@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20141031035236_add_currently_managed_by_us.rb
