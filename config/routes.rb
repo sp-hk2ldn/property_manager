@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'tenants' => 'tenants#show'
   get 'dashboard' => 'admin#dashboard'
-  get 'admin/new' => 'admin#form', :as => :form
+  get 'admin/form' => 'admin#form', :as => :form
 
 
   # get 'welcome/worklist' => 'welcome#worklist'

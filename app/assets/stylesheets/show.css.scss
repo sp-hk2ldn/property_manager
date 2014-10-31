@@ -13,7 +13,7 @@ body > div.container > div > div.col-md-9 > div:nth-child(5) > div > div > div.p
 
 #leftCol {
 	background-color:#1f1f1f;
-	margin-top:200px;
+	margin-top:152px;
 }
 
 #landlord, #tenant, #blank, .panel-body, .panel-heading {
@@ -45,7 +45,7 @@ h3 {
 }
 
 .panel-heading {
-	padding-bottom:50px;
+	padding-bottom:20px;
 }
 
 .panel-heading > p {
@@ -70,4 +70,13 @@ body > div.container > div > div.col-md-9 > div:nth-child(6) > div:nth-child(1) 
 
 body > div.container > div > div.col-md-9 > div:nth-child(6) > div:nth-child(1) > div > h4 {
 	padding-bottom:30px;
+}
+#worktype {
+	margin-top:90px;
+}
+#noworkheader {
+	padding-bottom:90px;
+}
+#tenant-sidebar {
+	padding-bottom:100px;
 }

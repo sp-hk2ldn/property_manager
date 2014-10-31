@@ -57,7 +57,7 @@
                                     <i class="fa fa-users fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge"><%= link_to 'Add Tenant', form_path, {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window1'} %></div>
+                                    <div class="huge"><%= link_to 'Add Tenant', 'form', {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window1'} %></div>
                                 </div>
                             </div>
                         </div>
@@ -106,22 +106,24 @@
 
 <div class="row">
   <div class="col-md-4">
-        <div id="modal-window1" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
-  </div>
+        <div class="modal fade" id="modal-window1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
   <div class="col-md-4">
-        <div id="modal-window2" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+        <div id="modal-window2" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
   </div>
     <div class="col-md-4">
-        <div id="modal-window3" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+        <div id="modal-window3" class="modal fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
   </div>
 </div>
 
+
+<h1><%= link_to 'test', 'form' %></h1>
 <script type="text/javascript">
         new Morris.Line({
           // ID of the element in which to draw the chart.
           element: 'performance-chart',
           // Chart data records -- each entry in this array corresponds to a point on
           // the chart.
+          // idea: see if I can use ruby to generate the months dynamically from page loaded date, ie Time.now -xxx seconds for 6 months ago and format that number to 2014-03 or whatnot.
           data: [
             { month: '2014-02', value: <%= @property_count %> },
             { month: '2014-04', value: 37 },
