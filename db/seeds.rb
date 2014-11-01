@@ -5,21 +5,28 @@
 #
 #   cities = City.create([ name: 'Chicago' ,  name: 'Copenhagen' ])
 #   Mayor.create(name: 'Emanuel', city: citiTees.first)
-# Property.create address: "45 The Drive, Wallington, SM69ND", work_outstanding: false, work_outstanding_type: "", latitude: 51.34666593200046, longitude: -0.14025118899957079, landlord_id: 1, created_at: "2014-10-31 03:42:25", updated_at: "2014-10-31 03:42:25", currently_managed_by_us: true
-# Property.create address: "22 Woodside Road, PURLEY, Surrey, CR8 4LQ", work_outstanding: true, work_outstanding_type: "Plumbing", latitude: 51.332229630000484, longitude: -0.13479235499954711, landlord_id: 1, created_at: "2014-10-30 23:58:31", updated_at: "2014-10-30 23:58:31", currently_managed_by_us: true
-# Property.create address: "10 Smitham Downs Road, Purley, CR8", work_outstanding: false, work_outstanding_type: "", latitude: 51.3284491120005, longitude: -0.13074081499956947, landlord_id: 1, created_at: "2014-09-30 17:00:00", updated_at: "2014-10-31 03:23:18", currently_managed_by_us: true
-# Property.create address: "32 Foxglove Gardens, Webb Estate, Purley, Surrey, ...", work_outstanding: false, work_outstanding_type: "", latitude: 51.33938769500048, longitude: -0.1277343929995709, landlord_id: 2, created_at: "2014-10-30 23:57:07", updated_at: "2014-10-30 23:57:07", currently_managed_by_us: true
-# Property.create address: "12 Briar Hill, Purley, Surrey, CR8 3LE", work_outstanding: false, work_outstanding_type: "Checkout", latitude: 51.34010710100051, longitude: -0.13040638899957457, landlord_id: 3, created_at: "2014-10-30 23:56:30", updated_at: "2014-10-30 23:56:30", currently_managed_by_us: true
-# Property.create address: "69 Canon Court, Wallington, Surrey", work_outstanding: false, work_outstanding_type: "", latitude: 51.31057016700049, longitude: -0.05709989799959203, landlord_id: 1, created_at: "2014-10-30 12:37:09", updated_at: "2014-10-30 12:37:09", currently_managed_by_us: true
-# Property.create address: "29 Purley Park Road, Purley", work_outstanding: true, work_outstanding_type: "Plumbing", latitude: 51.341916933000505, longitude: -0.10849348499959888, landlord_id: 2, created_at: "2014-10-30 10:03:23", updated_at: "2014-10-30 10:03:23", currently_managed_by_us: true
 
-# Landlord.create first_name: "Stephen", last_name: "Parker", telephone_number: "95876595", email_address: "stevo_parker@hotmail.com", mailing_address: "68 Vista Horizon, Chung Hom Kok Road, Hong Kong", date_registered_with_us: "2014-10-31"
-# Landlord.create first_name: "Dave", last_name: "Briggs", telephone_number: "98581233", email_address: "dave@hotmail.com", mailing_address: "102 Barker Street, London", date_registered_with_us: "2014-10-31"
-# Landlord.create first_name: "John", last_name: "Lok", telephone_number: "63141448", email_address: "joh", mailing_address: "john@johnlok.me", date_registered_with_us: "2012-10-31"
-# Landlord.create first_name: "Ashton", last_name: "Coghlan", telephone_number: "98651124", email_address: "ashtoncoghlan@gmail.com", mailing_address: "125 Freedom Terrace, New York, USA", date_registered_with_us: "2014-07-24"
-# Landlord.create first_name: "Paul", last_name: "Shearing", telephone_number: "48985547", email_address: "paul@gmail.com", mailing_address: "105 Wideboy Lane, Romford, Essex", date_registered_with_us: "2014-07-01"
-# Landlord.create first_name: "Harry", last_name: "Ng", telephone_number: "95664859", email_address: "harry.ng@ga.co", mailing_address: "55 Foodfoodfood Road, Prince Edward, Hong Kong", date_registered_with_us: "2014-07-01"
-# Landlord.create first_name: "Ryan", last_name: "Stuttard", telephone_number: "83950530", email_address: "ryan_stuttard@hotmail.com", mailing_address: "35 The Drive, Wallington Surrey, SM69ND", date_registered_with_us: "2014-07-01"
+Landlord.destroy_all
+
+Landlord.create first_name: "Stephen", last_name: "Parker", telephone_number: "95876595", email_address: "stevo_parker@hotmail.com", mailing_address: "68 Vista Horizon, Chung Hom Kok Road, Hong Kong", date_registered_with_us: "2014-10-31"
+Landlord.create first_name: "Dave", last_name: "Briggs", telephone_number: "98581233", email_address: "dave@hotmail.com", mailing_address: "102 Barker Street, London", date_registered_with_us: "2014-10-31"
+Landlord.create first_name: "John", last_name: "Lok", telephone_number: "63141448", email_address: "joh", mailing_address: "john@johnlok.me", date_registered_with_us: "2012-10-31"
+Landlord.create first_name: "Ashton", last_name: "Coghlan", telephone_number: "98651124", email_address: "ashtoncoghlan@gmail.com", mailing_address: "125 Freedom Terrace, New York, USA", date_registered_with_us: "2014-07-24"
+Landlord.create first_name: "Paul", last_name: "Shearing", telephone_number: "48985547", email_address: "paul@gmail.com", mailing_address: "105 Wideboy Lane, Romford, Essex", date_registered_with_us: "2014-07-01"
+Landlord.create first_name: "Harry", last_name: "Ng", telephone_number: "95664859", email_address: "harry.ng@ga.co", mailing_address: "55 Foodfoodfood Road, Prince Edward, Hong Kong", date_registered_with_us: "2014-07-01"
+Landlord.create first_name: "Ryan", last_name: "Stuttard", telephone_number: "83950530", email_address: "ryan_stuttard@hotmail.com", mailing_address: "35 The Drive, Wallington Surrey, SM69ND", date_registered_with_us: "2014-07-01"
+
+Property.destroy_all
+
+Property.create address: "45 The Drive, Wallington, SM70ND", work_outstanding: false, work_outstanding_type: "", latitude: 51.34666593200046, longitude: -0.14025118899957079, landlord_id: 1, created_at: "2014-10-31 03:42:25", updated_at: "2014-10-31 03:42:25", currently_managed_by_us: true
+Property.create address: "22 Woodside Road, PURLEY, Surrey, CR8 4LQ", work_outstanding: true, work_outstanding_type: "Plumbing", latitude: 51.332229630000484, longitude: -0.13479235499954711, landlord_id: 1, created_at: "2014-10-30 23:58:31", updated_at: "2014-10-30 23:58:31", currently_managed_by_us: true
+Property.create address: "10 Smitham Downs Road, Purley, CR8", work_outstanding: false, work_outstanding_type: "", latitude: 51.3284491120005, longitude: -0.13074081499956947, landlord_id: 1, created_at: "2014-09-30 17:00:00", updated_at: "2014-10-31 03:23:18", currently_managed_by_us: true
+Property.create address: "32 Foxglove Gardens, Webb Estate, Purley, Surrey, ...", work_outstanding: false, work_outstanding_type: "", latitude: 51.33938769500048, longitude: -0.1277343929995709, landlord_id: 2, created_at: "2014-10-30 23:57:07", updated_at: "2014-10-30 23:57:07", currently_managed_by_us: true
+Property.create address: "12 Briar Hill, Purley, Surrey, CR8 3LE", work_outstanding: false, work_outstanding_type: "Checkout", latitude: 51.34010710100051, longitude: -0.13040638899957457, landlord_id: 3, created_at: "2014-10-30 23:56:30", updated_at: "2014-10-30 23:56:30", currently_managed_by_us: true
+Property.create address: "69 Canon Court, Wallington, Surrey", work_outstanding: false, work_outstanding_type: "", latitude: 51.31057016700049, longitude: -0.05709989799959203, landlord_id: 1, created_at: "2014-10-30 12:37:09", updated_at: "2014-10-30 12:37:09", currently_managed_by_us: true
+Property.create address: "29 Purley Park Road, Purley", work_outstanding: true, work_outstanding_type: "Plumbing", latitude: 51.341916933000505, longitude: -0.10849348499959888, landlord_id: 2, created_at: "2014-10-30 10:03:23", updated_at: "2014-10-30 10:03:23", currently_managed_by_us: true
+
+Tenant.destroy_all
 
 Tenant.create first_name:'Bert', last_name:'Campos', telephone_number:'5117-9411', email_address:'sapien@eu.org', date_of_commencement:2013-11-18, date_of_termination:2014-11-01
 Tenant.create first_name:'Zeph', last_name:'Berger', telephone_number:'7663-7549', email_address:'interdum@rutrummagna.co.uk', date_of_commencement:2013-12-27, date_of_termination:2014-11-19
