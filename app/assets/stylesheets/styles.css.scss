@@ -17,6 +17,13 @@ body{
   	padding-top:50px; /*padding for navbar*/
 }
 
+a {
+    color: #cc7b19;
+}
+
+a:visited {
+    color: #A86412;
+}
 .navbar-custom .icon-bar {
 	background-color:#fff;
 }
@@ -53,25 +60,19 @@ body{
 	height:100%;
 }
 
-#map-canvas {
-	width:30%;
-    height:60%;
-    position:absolute;
-    right:40px;
-    top:20%;
-    bottom:0;
-    overflow:hidden;
+#map {
     border:3px double gray;
 }
 
-h2 {
-    color:#fff;
-}
 
-.display {
-    background-image:-webkit-linear-gradient(left,rgba(23, 23, 23, 0.4),rgba(19,19,19,.4) 50%,rgba(0,0,0,.4));
+.odd {
+    background-color:#000 !important;
 }
 
 .even {
-    background-color:red;
+    background-color:#1f1f1f !important;
+}
+
+h1 {
+    font-size:2em;
 }
